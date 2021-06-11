@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Hematologia2</title>
+</head>
+<body>
+<div id="app">
+    <h2>Eritrocitos</h2>
+    <input type="number" v-model.number="globulorojo">
+    <h2>Hematocrito</h2>
+    <input type="number" v-model.number="hto">
+    <h2>Hemoglobina</h2>
+    <input type="number" v-model.number="hb">
+    <br>{{gr}}--{{hto}}--{{hb}}
+    <button @click="calcularvcm">calcular VCM</button>
+    <button @click="calcularhcm">calcular HCM</button>
+    <button @click="calcularchcm">calcular CHCM</button>
+    <h2>{{resultadovcm}}</h2>
+    <h2>{{resultadocalcularhcm}}</h2>
+<pre>{{$data}}</pre>
+</div>
+
+</body>
+
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            hto:0,
+            globulorojo:0,
+            resultadovcm:0,
+            resultadocalcularhcm:0,
+            hb:0,
+        },
+        methods:{
+            calcularvcm(){
+               this.resultadovcm= (this.hto*10)/this.globulorojo
+            },
+            calcularhcm(){
+                this.resultadocalcularhcm=(this.hb *10)/this.globulorojo
+            }
+        }
+
+    })
+
+</script>
+</html>

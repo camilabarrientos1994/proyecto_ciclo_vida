@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input</title>
+</head>
+<body>
+
+<div id="app">
+    <h2>globulos rojos</h2>
+   <input type="number" v-model="gr">
+    <h2>hematocrito</h2>
+    <input type="number" v-model="hto">
+    <h2>Hemoglobina</h2>
+    <input type="number" v-model="hb">
+
+    <button @click="calcularvcm"></button>
+    <button @click="calcularhcm"></button>
+    <button @click="calcularchcm"></button>
+
+
+
+    <h2>vcm = {{vcm}}</h2>
+
+
+    <pre>{{$data}}</pre>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            gr:0,
+            hto:0,
+            vcm:0,
+            hb:0,
+            hcm:0,
+
+
+        },
+        methods:{
+            calcularvcm(){
+                this.vcm= (this.hto *10)/this.gr
+            },
+            calcularhcm(){
+                this.hcm=(this.)
+            }
+        }
+    })
+</script>
+
+</html>
